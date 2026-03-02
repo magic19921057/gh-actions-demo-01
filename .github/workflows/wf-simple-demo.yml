@@ -24,6 +24,7 @@ jobs:
           echo "Going sleep..."
           sleep 10
           echo "Now, I am ready to work"
+          echo "Just checking"
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
