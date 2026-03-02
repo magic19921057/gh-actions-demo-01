@@ -16,6 +16,6 @@ jobs:
             - run: dotnet --list-runtimes
             - run: dotnet --list-sdks
             - run: dotnet build
-                working-directory: ./dotnetwebapp/MyWebApp
+              working-directory: ./dotnetwebapp/MyWebApp
             - run: dotnet test
-                working-directory: ./dotnetwebapp/MyWebApp        
+              working-directory: ./dotnetwebapp/MyWebApp        
