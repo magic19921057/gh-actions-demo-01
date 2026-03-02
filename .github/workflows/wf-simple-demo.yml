@@ -5,7 +5,10 @@ name: Simple Demo
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
+  # push:
+  schedule:
+    - cron: "*/2 * * * *"    
+
     
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,7 +27,7 @@ jobs:
           echo "Going sleep..."
           sleep 10
           echo "Now, I am ready to work"
-          echo "Just checking"
+        
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
