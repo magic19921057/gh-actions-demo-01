@@ -14,7 +14,7 @@ jobs:
             - name: Check python version
               run: python -V
 
-            - name: Display current Directory  
+            - name: Display current Directory
               run: pwd
 
             - name: List files
@@ -25,3 +25,12 @@ jobs:
 
             - name: List files
               run: ls -R  
+
+            - name: Install Python
+              uses: actions/setup-python@v4
+              with:
+                python-version: '3.13'
+
+            - name: Check Python version
+              run: python -V   
+
