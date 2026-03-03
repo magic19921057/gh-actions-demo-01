@@ -42,5 +42,14 @@ jobs:
 
             - name: Run tests
               working-directory: py-upper
-              run: pytest -v          
+              run: pytest -v
 
+            - name: Configure cache for pip
+              uses: actions/cache@v4
+              with:
+                path: ~/.cache/pip
+                key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}        
+                restore-keys:
+                    ${{ runner.os }}-pip-
+
+                        
