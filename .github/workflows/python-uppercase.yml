@@ -31,6 +31,6 @@ jobs:
               with:
                 python-version: '3.13'
 
-            - name: Check Python version
+            - name: Check python version
               run: python -V   
 
