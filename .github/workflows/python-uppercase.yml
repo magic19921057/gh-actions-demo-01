@@ -11,8 +11,8 @@ jobs:
     test:
         runs-on: self-hosted
         steps:
- #           - name: Check python version
- #             run: python -V
+            - name: Check python version
+              run: python -V
 
             - name: Display current Directory
               run: pwd
@@ -31,8 +31,8 @@ jobs:
  #             with:
  #               python-version: '3.13'
 
-#           - name: Check Python version
-#              run: python -V   
+           - name: Check Python version
+              run: python -V   
 
             - name: Install Python dependencies
               uses: py-actions/py-dependency-install@v4
