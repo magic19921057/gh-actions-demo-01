@@ -12,7 +12,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Check python version
-        run: python -V
+        run: py -V
 
       - name: Display current Directory
         run: pwd
@@ -27,7 +27,7 @@ jobs:
         run: ls -R
 
       - name: Check Python version again
-        run: python -V
+        run: py -V
 
       # - name: Install Python dependencies
       #   uses: py-actions/py-dependency-install@v4
