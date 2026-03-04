@@ -37,7 +37,7 @@ jobs:
 
       - name: Run tests
         working-directory: py-upper
-        run: pytest -v
+        run: py -m pytest -v
 
       - name: Configure cache for pip
         uses: actions/cache@v4
