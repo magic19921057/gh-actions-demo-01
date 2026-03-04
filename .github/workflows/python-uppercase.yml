@@ -9,10 +9,10 @@ on:
 
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Check python version
-        run: py -V
+        run: python -V
 
       - name: Display current Directory
         run: pwd
@@ -27,17 +27,17 @@ jobs:
         run: ls -R
 
       - name: Check Python version again
-        run: py -V
+        run: python -V
 
-      # - name: Install Python dependencies
-      #   uses: py-actions/py-dependency-install@v4
-      #   with:
-      #     path: "py-upper/requirements.txt"
-      #     update-pip: "true"
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v4
+        with:
+          path: "py-upper/requirements.txt"
+          update-pip: "true"
 
       - name: Run tests
         working-directory: py-upper
-        run: py -m pytest -v
+        run: pytest -v
 
       - name: Configure cache for pip
         uses: actions/cache@v4
