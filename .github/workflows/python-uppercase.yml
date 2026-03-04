@@ -1,55 +1,48 @@
 name: Python Uppercase
 
 on:
-    push:
-        paths:
-            - ".github/workflows/python-uppercase.yml"
-            - "py-upper/**"    
-    workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/python-uppercase.yml"
+      - "py-upper/**"
+  workflow_dispatch:
 
 jobs:
-    test:
-        runs-on: self-hosted
-        steps:
-            - name: Check python version
-              run: python -V
+  test:
+    runs-on: self-hosted
+    steps:
+      - name: Check python version
+        run: python -V
 
-            - name: Display current Directory
-              run: pwd
+      - name: Display current Directory
+        run: pwd
 
-            - name: List files
-              run: ls -R  
-            
-            - name: Checkout repository
-              uses: actions/checkout@v4
+      - name: List files
+        run: ls -R
 
-            - name: List files
-              run: ls -R  
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
- #           - name: Install Python
- #             uses: actions/setup-python@v4
- #             with:
- #               python-version: '3.13'
+      - name: List files (after checkout)
+        run: ls -R
 
-           - name: Check Python version
-              run: python -V   
+      - name: Check Python version again
+        run: python -V
 
-            - name: Install Python dependencies
-              uses: py-actions/py-dependency-install@v4
-              with:
-                path: "py-upper/requirements.txt"
-                update-pip: "true"
+      # - name: Install Python dependencies
+      #   uses: py-actions/py-dependency-install@v4
+      #   with:
+      #     path: "py-upper/requirements.txt"
+      #     update-pip: "true"
 
-            - name: Run tests
-              working-directory: py-upper
-              run: pytest -v
+      - name: Run tests
+        working-directory: py-upper
+        run: pytest -v
 
-            - name: Configure cache for pip
-              uses: actions/cache@v4
-              with:
-                path: ~/.cache/pip
-                key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}        
-                restore-keys:
-                    ${{ runner.os }}-pip-
-
-                        
+      - name: Configure cache for pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
