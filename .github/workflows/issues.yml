@@ -25,5 +25,5 @@ jobs:
       - name: Show comment ID
         run: echo "COMMENT_ID is $COMMENT_ID"
         env:
-          COMMENT_ID: ${{steps.add_comment.outputs.COMMENTID }}
+          COMMENT_ID: ${{steps.add_comment.outputs.COMMENT_ID }}
         
