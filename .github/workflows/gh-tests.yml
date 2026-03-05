@@ -16,7 +16,7 @@ jobs:
           GH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
 
     - name: Checkout  
-      run: actions/checkout@v4
+      uses: actions/checkout@v4
 
     - name: gh auth status
       run: gh auth status
