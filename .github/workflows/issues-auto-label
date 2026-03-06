@@ -1,4 +1,4 @@
-name: Auto-label
+name: Auto-label issue
 on:
   issue_comment:
     types: [created]
